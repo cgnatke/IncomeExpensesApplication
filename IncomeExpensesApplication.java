@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.lang.UnsupportedOperationException;
 
 public class IncomeExpensesApplication {
 
@@ -72,8 +73,10 @@ public class IncomeExpensesApplication {
 			System.out.println("Date: " + date);
 			System.out.println();
 
-			try {			
-				expenses[Integer.parseInt(System.console().readLine())] += amount;
+			try {	
+				int selection = Integer.parseInt(System.console().readLine());		
+				expenses[selection] += amount;
+				//storeSelection(selection, description);
 				inputValid = true;
 				System.out.println();			
 			} catch (Exception e) {
@@ -102,6 +105,13 @@ public class IncomeExpensesApplication {
 		System.out.println("Total Expenses: " + sumExpenses);
 		System.out.println("-------------------------------");
 		System.out.println("Net income: " + (expenses[0] + sumExpenses));
+		System.out.println();
+	}
+
+	private static void storeSelection(int selection, String description) {
+		//implement database insert here...
+		throw new UnsupportedOperationException("TODO: this method hasn't been implmented yet!");
+
 	}
 
 	private static String promptForFilename() {
