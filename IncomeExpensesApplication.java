@@ -10,10 +10,10 @@ public class IncomeExpensesApplication {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 	
 		double[] expenses = new double[9];
-		String fileName = "./data/" + promptForFilename();
+		String fileName = "./data/account_example.csv"; //+ promptForFilename();
 		readInputFile(expenses, fileName);
 		System.out.println("Done with income/expenses input");
-		printExpensesArray(expenses);
+		printReport(expenses);
 	}
 
 	private static void readInputFile(double[] expenses, String fileName) throws FileNotFoundException, IOException {
@@ -83,7 +83,7 @@ public class IncomeExpensesApplication {
 		}
 	}
 
-	private static void printExpensesArray(double [] expenses) {
+	private static void printReport(double [] expenses) {
 		System.out.println("Paycheck: " + expenses[0]);
 		System.out.println("Cellphone Allowance: " + expenses[1]);
 		System.out.println("Rent Exp: " + expenses[2]);
@@ -93,6 +93,15 @@ public class IncomeExpensesApplication {
 		System.out.println("Food Exp: " + expenses[6]);
 		System.out.println("Out to Dinner Exp: " + expenses[7]);
 		System.out.println("Misc Exp: " + expenses[8]);
+		System.out.println();
+		System.out.println("Total Income: " + expenses[0]);
+
+		double sumExpenses = expenses[1] + expenses[2] + expenses[3] + expenses[4] + 
+			expenses[5] + expenses[6] + expenses[7] + expenses[8];
+
+		System.out.println("Total Expenses: " + sumExpenses);
+		System.out.println("-------------------------------");
+		System.out.println("Net income: " + (expenses[0] + sumExpenses));
 	}
 
 	private static String promptForFilename() {
