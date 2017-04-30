@@ -1,0 +1,128 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+public class IncomeExpensesApplication {
+
+	//private static final String FILENAME = "./account.csv";
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+	
+		double[] expenses = new double[9];
+		String fileName = "./data/" + promptForFilename();
+		readInputFile(expenses, fileName);
+		System.out.println("Done with income/expenses input");
+		printExpensesArray(expenses);
+	}
+
+	private static void readInputFile(double[] expenses) throws FileNotFoundException, IOException {
+
+		BufferedReader br = null;
+		FileReader fr = null;
+
+		fr = new FileReader(FILENAME);
+		br = new BufferedReader(fr);
+
+		String sCurrentLine;
+
+		br = new BufferedReader(new FileReader(FILENAME));
+		
+		//start at line 4
+		br.readLine();
+		br.readLine();
+		br.readLine();
+		while ((sCurrentLine = br.readLine()) != null) {
+			processTransaction(sCurrentLine, expenses);
+			//System.out.println(sCurrentLine);
+		}
+
+		if (br != null) {
+			br.close();
+		}
+		if (fr != null) {
+			fr.close();			
+		}
+	}
+
+
+	private static void processTransaction(String transaction, double[] expenses) {
+		boolean inputValid = false;		
+		while (!inputValid) {
+			//todo should use double... Use a type designed for currency instead...
+			double amount = Double.parseDouble(transaction.split(",")[1].replace("\"","")); //get rid of double quotes	
+			String description = transaction.split(",")[2].replace("\"","");
+			String date = transaction.split(",")[0].replace("\"","");
+
+			System.out.println("What type of transaction is this?: ");
+			System.out.println("------------------------");
+			System.out.println("Paycheck: 0");
+			System.out.println("Cellphone Allowance: 1");
+			System.out.println("Rent Exp: 2");
+			System.out.println("Apartment Exp: 3");
+			System.out.println("Cell Exp: 4");
+			System.out.println("Fuel Exp: 5");
+			System.out.println("Food Exp: 6");
+			System.out.println("Out to Dinner Exp: 7");
+			System.out.println("Misc Exp: 8");
+			System.out.println("------------------------");
+
+			System.out.println("Description: " + description);
+			System.out.println("Amount: " + amount);
+			System.out.println("Date: " + date);
+			System.out.println();
+
+			try {			
+				expenses[Integer.parseInt(System.console().readLine())] += amount;
+				inputValid = true;			
+			} catch (Exception e) {
+
+				System.out.println("Your input was not valid. Try again!\n");
+			}
+		}
+	}
+
+	private static void printExpensesArray(double [] expenses) {
+		System.out.println("Paycheck: " + expenses[0]);
+		System.out.println("Cellphone Allowance: " + expenses[1]);
+		System.out.println("Rent Exp: " + expenses[2]);
+		System.out.println("Apartment Exp: " + expenses[3]);
+		System.out.println("Cell Exp: " + expenses[4]);
+		System.out.println("Fuel Exp: " + expenses[5]);
+		System.out.println("Food Exp: " + expenses[6]);
+		System.out.println("Out to Dinner Exp: " + expenses[7]);
+		System.out.println("Misc Exp: " + expenses[8]);
+	}
+
+	private static string promptForFilename() {
+		//being lazy by not writing error handling or input validation
+		return System.console().readLine();			
+	}
+
+}
+
+
+/* record example
+04/07/2017,"-13.07","TOPS MARKETS #3 CAZENOVIA NY USA",
+*/
+
+/* 
+Income:
+	Paycheck	
+	Cellphone allowance
+
+
+Expenses:
+
+	Rent
+	Apartment Expenses
+	Cell phone bill
+	Gas for Car
+	Food	
+	OutToDinner
+	Misc
+
+*/
+
+
+
