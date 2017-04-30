@@ -16,17 +16,17 @@ public class IncomeExpensesApplication {
 		printExpensesArray(expenses);
 	}
 
-	private static void readInputFile(double[] expenses) throws FileNotFoundException, IOException {
+	private static void readInputFile(double[] expenses, String fileName) throws FileNotFoundException, IOException {
 
 		BufferedReader br = null;
 		FileReader fr = null;
 
-		fr = new FileReader(FILENAME);
+		fr = new FileReader(fileName);
 		br = new BufferedReader(fr);
 
 		String sCurrentLine;
 
-		br = new BufferedReader(new FileReader(FILENAME));
+		br = new BufferedReader(new FileReader(fileName));
 		
 		//start at line 4
 		br.readLine();
@@ -74,7 +74,8 @@ public class IncomeExpensesApplication {
 
 			try {			
 				expenses[Integer.parseInt(System.console().readLine())] += amount;
-				inputValid = true;			
+				inputValid = true;
+				System.out.println();			
 			} catch (Exception e) {
 
 				System.out.println("Your input was not valid. Try again!\n");
@@ -94,7 +95,8 @@ public class IncomeExpensesApplication {
 		System.out.println("Misc Exp: " + expenses[8]);
 	}
 
-	private static string promptForFilename() {
+	private static String promptForFilename() {
+		System.out.print("Input filename?: ");
 		//being lazy by not writing error handling or input validation
 		return System.console().readLine();			
 	}
