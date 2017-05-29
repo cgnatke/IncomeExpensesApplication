@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_portrait"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="What type of event is this???"
+        android:id="@+id/textView"
+        android:layout_above="@+id/gridview"
+        android:layout_centerHorizontal="true"
+        android:gravity="top"
+        android:textSize="30dp"/>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:gravity="bottom"
+                    tools:context="com.androxp.randika.main.MainActivity"
+                    tools:showIn="@layout/activity_main">
+
+        <Button
+            android:id="@+id/bPaycheck"
+            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_marginLeft="5dp"
+            android:text="Paycheck"/>
+
+        <Button
+            android:id="@+id/bUtilities"
+            android:layout_toRightOf="@+id/bPaycheck"
+            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Utilities Exp"/>
+
+        <Button
+            android:id="@+id/bDining"
+            android:layout_toRightOf="@+id/bUtilities"
+            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_marginRight="5dp"
+            android:text="Dining Exp"/>
+
+        <Button
+            android:id="@+id/bDeposits"
+            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:text="Deposits"
+            android:layout_below="@+id/bPaycheck"
+            android:layout_alignLeft="@+id/bPaycheck"
+            android:layout_alignStart="@+id/bPaycheck" />
+
+        <Button
+            android:id="@+id/bFuel"
+            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:text="Fuel Exp"
+            android:layout_alignTop="@+id/bDeposits"
+            android:layout_alignRight="@+id/bUtilities"
+            android:layout_alignEnd="@+id/bUtilities" />
+
+        <Button
+            android:id="@+id/bMisc"
+            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:text="Misc Exp"
+            android:layout_below="@+id/bDining"
+            android:layout_alignRight="@+id/bDining"
+            android:layout_alignEnd="@+id/bDining" />
+
+        <Button
+            android:id="@+id/bRent"
+            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:text="Rent Exp"
+            android:layout_below="@+id/bDeposits"
+            android:layout_alignLeft="@+id/bDeposits"
+            android:layout_alignStart="@+id/bDeposits"/>
+
+        <Button
+            android:id="@+id/bGroceries"
+            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:text="Groceries"
+            android:layout_alignTop="@+id/bRent"
+            android:layout_alignLeft="@+id/bFuel"
+            android:layout_alignStart="@+id/bFuel" />
+
+    </RelativeLayout>
+
+
+
+    <!--
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/gridview"
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  android:columnWidth="90dp"
+                  android:numColumns="3"
+                  android:verticalSpacing="5dp"
+                  android:horizontalSpacing="10dp"
+                  android:stretchMode="columnWidth"
+                  android:gravity="bottom"
+                  android:choiceMode="singleChoice"
+                  android:textFilterEnabled="false"
+                  android:clickable="true"/>
+
+    -->
+
+    </LinearLayout>
+<!-- From: file:/C:/Users/chris/AndroidStudioProjects/IncomeExpensesApplication/app/src/main/res/layout/activity_prompt.xml -->
