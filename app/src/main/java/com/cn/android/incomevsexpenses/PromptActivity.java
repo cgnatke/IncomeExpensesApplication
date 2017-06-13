@@ -1,6 +1,11 @@
 package com.cn.android.incomevsexpenses;
 
+import android.Manifest;
 import android.app.VoiceInteractor;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import android.support.v7.app.AppCompatActivity;
@@ -19,8 +25,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Currency;
+import java.util.List;
+
 
 public class PromptActivity extends AppCompatActivity {
+
+    private static final double[] expenses = new double[8];
+    private static final double amount = 0;
+
+    private static final String fileName = "./data/account_example.csv"; //+ promptForFilename();
+
+    private TextView mTextView;
 
     private Button mPaycheckButton;
     private Button mUtilitiesButton;
@@ -30,10 +53,37 @@ public class PromptActivity extends AppCompatActivity {
     private Button mMiscButton;
     private Button mRentButton;
     private Button mGroceriesButton;
+
+
+    private static void goToNextQuestion() {
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prompt);
+
+        //todo remove
+        Log.d("CN_STATE", Build.VERSION.SDK);
+        try {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1); //todo figure out how to properly grant permissions
+        } catch (Exception e) {
+
+            Log.e("CN_STATE", e.toString());
+        }
+
+        List<String> transactions = null;
+        try {
+            transactions = readStatement(); //todo this should be a list of transactions
+        } catch (Exception e) {
+            Log.e("CN_STATE", e.getStackTrace().toString());
+        }
+
+        Log.d("CN_STATE", Arrays.toString(transactions.toArray()));
+
+        mTextView = (TextView) findViewById(R.id.textView);
 
         //todo: create a factory for the button inits
         mPaycheckButton = (Button) findViewById(R.id.bPaycheck);
@@ -41,8 +91,9 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                Log.d("STATE", "You clicked the paycheck btn!!!");
-                ; //todo: something
+                Log.e("STATE", "You clicked the paycheck btn!!!");
+                expenses[0] += amount;
+                //go to next expense
             }
         });
 
@@ -51,7 +102,7 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                ; //todo: something
+                expenses[1] += amount;
             }
         });
 
@@ -60,7 +111,7 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                ; //todo: something
+                expenses[2] += amount;
             }
         });
 
@@ -69,7 +120,7 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                ; //todo: something
+                expenses[3] += amount;
             }
         });
 
@@ -78,7 +129,7 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                ; //todo: something
+                expenses[4] += amount;
             }
         });
 
@@ -87,7 +138,7 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                ; //todo: something
+                expenses[5] += amount;
             }
         });
 
@@ -96,7 +147,7 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                ; //todo: something
+                expenses[6] += amount;
             }
         });
 
@@ -105,9 +156,13 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                ; //todo: something
+                expenses[7] += amount;
             }
         });
+
+        //readInputFile(expenses, fileName);
+        System.out.println("Done with income/expenses input");
+        //printReport(expenses);
 
     }
 
@@ -132,4 +187,41 @@ public class PromptActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public List<String> readStatement() throws IOException {
+
+        if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            Log.v("CN_STATE","Permission is granted");
+            //File write logic here
+        } else {
+            Log.v("CN_STATE", "No permission!!!");
+        }
+
+
+
+
+        //List<BankTransaction> t = new ArrayList<BankTransaction>();
+        List<String> t = new ArrayList<String>();
+        File downloadsDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); //getExternalStorageDirectory();
+        File statement = new File(downloadsDirectory, "statement.txt.csv");
+
+        BufferedReader br;
+        try {
+
+            br = new BufferedReader(new FileReader(statement));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                t.add(line);
+            }
+        }
+        catch (IOException e) {
+            Log.e("CN_STATE", e.toString());
+        } finally {
+           // br.close();
+        }
+
+        return t;
+    }
+
 }

@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\chris\AndroidStudioProjects\IncomeVsExpenses\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeVsExpenses\app\build\intermediates\pre-dexed\debug\classes-72559ad2860ff1bba6bd1c7607bbf4e513e200b3.jar" />
-    </item>
-    <item
-        jar="C:\Users\chris\AndroidStudioProjects\IncomeVsExpenses\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeVsExpenses\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-6744d156626b9d813b1c09883ffa7db6130998f8.jar" />
-    </item>
-    <item
-        jar="C:\Users\chris\AndroidStudioProjects\IncomeVsExpenses\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeVsExpenses\app\build\intermediates\pre-dexed\debug\classes-af0042baffe7c25d4ac3b5e97c01fb4627ba03e8.jar" />
-    </item>
-    <item
         jar="C:\Users\chris\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeVsExpenses\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-95e51d7e227ed91ac2d769f616d2ca7ffc665470.jar" />
+        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-95e51d7e227ed91ac2d769f616d2ca7ffc665470.jar" />
+    </item>
+    <item
+        jar="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\classes-07c4081a4238ef0fbcd2f6fed6cddc9b84adfc7d.jar" />
+    </item>
+    <item
+        jar="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-8814db63e566461999350a3c8faae1387d3b267c.jar" />
+    </item>
+    <item
+        jar="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\classes-505b11836fb5bf8c95c53ce7c819552f3ac02219.jar" />
     </item>
 
 </items>
