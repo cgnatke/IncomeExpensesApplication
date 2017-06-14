@@ -65,18 +65,15 @@ public class PromptActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prompt);
 
-        //todo remove
-        Log.d("CN_STATE", Build.VERSION.SDK);
         try {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1); //todo figure out how to properly grant permissions
         } catch (Exception e) {
-
             Log.e("CN_STATE", e.toString());
         }
 
         List<BankTransaction> transactions = null;
         try {
-            transactions = readStatement(); //todo this should be a list of transactions
+            transactions = readStatement();
         } catch (Exception e) {
             Log.e("CN_STATE", e.getStackTrace().toString());
         }

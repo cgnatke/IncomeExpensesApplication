@@ -15,4 +15,10 @@ public class BankTransaction {
         this.description = description;
         this.amount = amount;
     }
+
+    public String toString() {
+
+        return this.description + ": " + this.amount;
+    }
+
 }
