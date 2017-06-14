@@ -74,7 +74,7 @@ public class PromptActivity extends AppCompatActivity {
             Log.e("CN_STATE", e.toString());
         }
 
-        List<String> transactions = null;
+        List<BankTransaction> transactions = null;
         try {
             transactions = readStatement(); //todo this should be a list of transactions
         } catch (Exception e) {
@@ -188,7 +188,7 @@ public class PromptActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public List<String> readStatement() throws IOException {
+    public List<BankTransaction> readStatement() throws IOException {
 
         if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             Log.v("CN_STATE","Permission is granted");
@@ -197,11 +197,8 @@ public class PromptActivity extends AppCompatActivity {
             Log.v("CN_STATE", "No permission!!!");
         }
 
-
-
-
         //List<BankTransaction> t = new ArrayList<BankTransaction>();
-        List<String> t = new ArrayList<String>();
+        List<BankTransaction> t = new ArrayList<BankTransaction>();
         File downloadsDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); //getExternalStorageDirectory();
         File statement = new File(downloadsDirectory, "statement.txt.csv");
 
@@ -211,14 +208,21 @@ public class PromptActivity extends AppCompatActivity {
             br = new BufferedReader(new FileReader(statement));
             String line;
 
+            //skip the first three lines of the file
+            br.readLine();
+            br.readLine();
+            br.readLine();
+
             while ((line = br.readLine()) != null) {
-                t.add(line);
+                double amount = Double.parseDouble(line.split(",")[1].replace("\"", "")); //get rid of double quotes
+                String description = line.split(",")[2].replace("\"","");
+                //String date = line.split(",")[0].replace("\"","");
+                BankTransaction bt = new BankTransaction(description, amount);
+                t.add(bt);
             }
         }
         catch (IOException e) {
             Log.e("CN_STATE", e.toString());
-        } finally {
-           // br.close();
         }
 
         return t;
