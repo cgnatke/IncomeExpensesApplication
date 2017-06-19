@@ -169,6 +169,7 @@ public class PromptActivity extends AppCompatActivity {
     private void goToNextTransaction() {
         BankTransaction t = transactions.get(index);
         mTextView.setText("What type of transaction is this? \n " + t.description);
+        amount = t.amount;
         index++;
     }
 
