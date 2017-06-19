@@ -162,15 +162,22 @@ public class PromptActivity extends AppCompatActivity {
             }
         });
 
+        //todo add button for out to dinner and snack expenses
+
         goToNextTransaction();
 
     }
 
     private void goToNextTransaction() {
-        BankTransaction t = transactions.get(index);
-        mTextView.setText("What type of transaction is this? \n " + t.description);
-        amount = t.amount;
-        index++;
+        if (index == transactions.size()-1 ) {
+            mTextView.setText("All done!"); //todo go to summary screen instead
+        } else {
+            BankTransaction t = transactions.get(index);
+            //todo add date and amount to the textbox
+            mTextView.setText("What type of transaction is this? \n " + t.toString());
+            amount = t.amount;
+            index++;
+        }
     }
 
     public List<BankTransaction> readStatement() throws IOException {
@@ -198,11 +205,12 @@ public class PromptActivity extends AppCompatActivity {
             br.readLine();
             br.readLine();
 
+            //todo add date to the bt class
             while ((line = br.readLine()) != null) {
                 double amount = Double.parseDouble(line.split(",")[1].replace("\"", "")); //get rid of double quotes
                 String description = line.split(",")[2].replace("\"","");
-                //String date = line.split(",")[0].replace("\"","");
-                BankTransaction bt = new BankTransaction(description, amount);
+                String date = line.split(",")[0].replace("\"","");
+                BankTransaction bt = new BankTransaction(description, amount, date);
                 t.add(bt);
             }
         }

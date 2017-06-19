@@ -8,17 +8,21 @@ import java.util.Date;
 public class BankTransaction {
 
     //members
-    double amount;// = Double.parseDouble(transaction.split(",")[1].replace("\"","")); //get rid of double quotes
-    String description; //= transaction.split(",")[2].replace("\"","");
+    double amount;
+    String description;
+    String date; //todo change type to an actual date
 
-    public BankTransaction(String description, double amount) {
+    public BankTransaction(String description, double amount, String date) {
         this.description = description;
         this.amount = amount;
+        this.date = date;
     }
 
     public String toString() {
 
-        return this.description + ": " + this.amount;
+        return "Date:" + this.date + "\n"
+                + "Description: " + this.description + "\n"
+                + "Amount: " + this.amount;
     }
 
 }
