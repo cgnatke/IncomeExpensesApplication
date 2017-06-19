@@ -69,19 +69,17 @@
             android:layout_width="100dp"
             android:text="Fuel Exp"
             android:layout_alignTop="@+id/bDeposits"
-            android:layout_alignRight="@+id/bUtilities"
-            android:layout_alignEnd="@+id/bUtilities" />
+            android:layout_alignLeft="@+id/bUtilities"
+            />
 
         <Button
             android:id="@+id/bRetirement"
             android:layout_height="wrap_content"
-            android:layout_width="100dp"
+            android:layout_width="109dp"
             android:text="Retirement"
             android:layout_alignLeft="@+id/bDining"
             android:layout_below="@+id/bDining"
-            android:layout_alignTop="@+id/bFuel"
-            android:layout_alignRight="@+id/bDining"
-            android:layout_alignEnd="@+id/bDining" />
+            android:layout_alignTop="@+id/bDeposits" />
 
         <Button
             android:id="@+id/bRent"
