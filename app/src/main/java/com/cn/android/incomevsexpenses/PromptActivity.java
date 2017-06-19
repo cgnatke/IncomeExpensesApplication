@@ -38,10 +38,13 @@ import java.util.List;
 
 public class PromptActivity extends AppCompatActivity {
 
-    private static final double[] expenses = new double[8];
-    private static final double amount = 0;
+    private double[] expenses = new double[8];
+    private double amount = 0;
 
     private static final String fileName = "./data/account_example.csv"; //+ promptForFilename();
+
+    private List<BankTransaction> transactions;
+    private int index = 0;
 
     private TextView mTextView;
 
@@ -55,11 +58,6 @@ public class PromptActivity extends AppCompatActivity {
     private Button mGroceriesButton;
 
 
-    private static void goToNextQuestion() {
-
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +69,7 @@ public class PromptActivity extends AppCompatActivity {
             Log.e("CN_STATE", e.toString());
         }
 
-        List<BankTransaction> transactions = null;
+
         try {
             transactions = readStatement();
         } catch (Exception e) {
@@ -88,9 +86,9 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //update an array of "expense categories"
-                Log.e("STATE", "You clicked the paycheck btn!!!");
+                Log.e("CN_STATE", "You clicked the paycheck btn!!!");
                 expenses[0] += amount;
-                //go to next expense
+                goToNextTransaction();
             }
         });
 
@@ -100,6 +98,7 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //update an array of "expense categories"
                 expenses[1] += amount;
+                goToNextTransaction();
             }
         });
 
@@ -109,6 +108,7 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //update an array of "expense categories"
                 expenses[2] += amount;
+                goToNextTransaction();
             }
         });
 
@@ -118,6 +118,7 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //update an array of "expense categories"
                 expenses[3] += amount;
+                goToNextTransaction();
             }
         });
 
@@ -127,6 +128,7 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //update an array of "expense categories"
                 expenses[4] += amount;
+                goToNextTransaction();
             }
         });
 
@@ -136,6 +138,7 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //update an array of "expense categories"
                 expenses[5] += amount;
+                goToNextTransaction();
             }
         });
 
@@ -145,6 +148,7 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //update an array of "expense categories"
                 expenses[6] += amount;
+                goToNextTransaction();
             }
         });
 
@@ -154,35 +158,18 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //update an array of "expense categories"
                 expenses[7] += amount;
+                goToNextTransaction();
             }
         });
 
-        //readInputFile(expenses, fileName);
-        System.out.println("Done with income/expenses input");
-        //printReport(expenses);
+        goToNextTransaction();
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_prompt, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    private void goToNextTransaction() {
+        BankTransaction t = transactions.get(index);
+        mTextView.setText("What type of transaction is this? \n " + t.description);
+        index++;
     }
 
     public List<BankTransaction> readStatement() throws IOException {
@@ -225,4 +212,26 @@ public class PromptActivity extends AppCompatActivity {
         return t;
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_prompt, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
