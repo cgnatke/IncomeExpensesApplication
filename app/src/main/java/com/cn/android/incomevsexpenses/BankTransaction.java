@@ -20,7 +20,7 @@ public class BankTransaction {
 
     public String toString() {
 
-        return "Date:" + this.date + "\n"
+        return "Date: " + this.date + "\n"
                 + "Description: " + this.description + "\n"
                 + "Amount: " + this.amount;
     }

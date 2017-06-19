@@ -38,10 +38,12 @@ import java.util.List;
 
 public class PromptActivity extends AppCompatActivity {
 
-    private double[] expenses = new double[8];
+    //private double[] expenses = new double[8];
+    private Expenses expenses = new Expenses();
     private double amount = 0;
 
-    private static final String fileName = "./data/account_example.csv"; //+ promptForFilename();
+    //todo use a dialog to prompt for the filename
+    private static final String fileName = "./data/account_testing.csv"; //+ promptForFilename();
 
     private List<BankTransaction> transactions;
     private int index = 0;
@@ -85,9 +87,8 @@ public class PromptActivity extends AppCompatActivity {
         mPaycheckButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
                 Log.e("CN_STATE", "You clicked the paycheck btn!!!");
-                expenses[0] += amount;
+                expenses.paycheck += amount;
                 goToNextTransaction();
             }
         });
@@ -96,8 +97,7 @@ public class PromptActivity extends AppCompatActivity {
         mUtilitiesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
-                expenses[1] += amount;
+                expenses.utilities += amount;
                 goToNextTransaction();
             }
         });
@@ -106,8 +106,7 @@ public class PromptActivity extends AppCompatActivity {
         mDiningButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
-                expenses[2] += amount;
+                expenses.dining += amount;
                 goToNextTransaction();
             }
         });
@@ -116,8 +115,7 @@ public class PromptActivity extends AppCompatActivity {
         mDepositsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
-                expenses[3] += amount;
+                expenses.deposits += amount;
                 goToNextTransaction();
             }
         });
@@ -126,8 +124,7 @@ public class PromptActivity extends AppCompatActivity {
         mFuelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
-                expenses[4] += amount;
+                expenses.fuel += amount;
                 goToNextTransaction();
             }
         });
@@ -136,8 +133,7 @@ public class PromptActivity extends AppCompatActivity {
         mMiscButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
-                expenses[5] += amount;
+                expenses.misc += amount;
                 goToNextTransaction();
             }
         });
@@ -146,8 +142,7 @@ public class PromptActivity extends AppCompatActivity {
         mRentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
-                expenses[6] += amount;
+                expenses.rent += amount;
                 goToNextTransaction();
             }
         });
@@ -156,29 +151,28 @@ public class PromptActivity extends AppCompatActivity {
         mGroceriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update an array of "expense categories"
-                expenses[7] += amount;
+                expenses.groceries += amount;
                 goToNextTransaction();
             }
         });
 
-        //todo add button for out to dinner and snack expenses
-
+        //todo add button for retirement/investment contributions
         goToNextTransaction();
 
     }
 
     private void goToNextTransaction() {
         if (index == transactions.size()-1 ) {
-            mTextView.setText("All done!"); //todo go to summary screen instead
+            mTextView.setText(expenses.toString()); //todo go to summary screen instead
         } else {
             BankTransaction t = transactions.get(index);
-            //todo add date and amount to the textbox
             mTextView.setText("What type of transaction is this? \n " + t.toString());
             amount = t.amount;
             index++;
         }
     }
+
+    //private void myClickHandler(View target) //todo create a click listener for all buttons to share
 
     public List<BankTransaction> readStatement() throws IOException {
 
@@ -192,7 +186,7 @@ public class PromptActivity extends AppCompatActivity {
         //List<BankTransaction> t = new ArrayList<BankTransaction>();
         List<BankTransaction> t = new ArrayList<BankTransaction>();
         File downloadsDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); //getExternalStorageDirectory();
-        File statement = new File(downloadsDirectory, "statement.txt.csv");
+        File statement = new File(downloadsDirectory, "account_testing.csv");
 
         BufferedReader br;
         try {
