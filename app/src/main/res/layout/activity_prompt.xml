@@ -44,7 +44,8 @@
             android:layout_width="100dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:text="Utilities Exp"/>
+            android:text="Utilities"
+            android:layout_alignBottom="@+id/bPaycheck"/>
 
         <Button
             android:id="@+id/bDining"

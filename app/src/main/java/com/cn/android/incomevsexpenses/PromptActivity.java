@@ -148,7 +148,6 @@ public class PromptActivity extends AppCompatActivity {
         mPaycheckButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("CN_STATE", "You clicked the paycheck btn!!!");
                 expenses.paycheck += amount;
                 goToNextTransaction();
             }
@@ -213,6 +212,15 @@ public class PromptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 expenses.groceries += amount;
+                goToNextTransaction();
+            }
+        });
+
+        mPaycheckButton = (Button) findViewById(R.id.bRetirement);
+        mPaycheckButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expenses.retirement += amount;
                 goToNextTransaction();
             }
         });

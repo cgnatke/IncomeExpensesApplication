@@ -29,7 +29,7 @@ public class Expenses {
     }
 
     public String toString() {
-        double totalExpenses = this.rent + this.utilities + this.fuel + this.groceries + this.dining + retirement + this.misc;
+        double totalExpenses = this.rent + this.utilities + this.fuel + this.groceries + this.dining + this.retirement + this.misc;
         double net = this.paycheck + this.deposits + totalExpenses;
 
         return "Paycheck: " + this.paycheck + "\n" +
