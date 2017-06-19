@@ -33,7 +33,7 @@
         <Button
             android:id="@+id/bPaycheck"
             android:layout_height="wrap_content"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:layout_marginLeft="5dp"
             android:text="Paycheck"/>
 
@@ -41,7 +41,7 @@
             android:id="@+id/bUtilities"
             android:layout_toRightOf="@+id/bPaycheck"
             android:layout_height="wrap_content"
-            android:layout_width="115dp"
+            android:layout_width="100dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:text="Utilities Exp"/>
@@ -50,14 +50,14 @@
             android:id="@+id/bDining"
             android:layout_toRightOf="@+id/bUtilities"
             android:layout_height="wrap_content"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:layout_marginRight="5dp"
             android:text="Dining Exp"/>
 
         <Button
             android:id="@+id/bDeposits"
             android:layout_height="wrap_content"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:text="Deposits"
             android:layout_below="@+id/bPaycheck"
             android:layout_alignLeft="@+id/bPaycheck"
@@ -66,25 +66,27 @@
         <Button
             android:id="@+id/bFuel"
             android:layout_height="wrap_content"
-            android:layout_width="115dp"
+            android:layout_width="100dp"
             android:text="Fuel Exp"
             android:layout_alignTop="@+id/bDeposits"
             android:layout_alignRight="@+id/bUtilities"
             android:layout_alignEnd="@+id/bUtilities" />
 
         <Button
-            android:id="@+id/bMisc"
+            android:id="@+id/bRetirement"
             android:layout_height="wrap_content"
-            android:layout_width="110dp"
-            android:text="Misc Exp"
+            android:layout_width="100dp"
+            android:text="Retirement"
+            android:layout_alignLeft="@+id/bDining"
             android:layout_below="@+id/bDining"
+            android:layout_alignTop="@+id/bFuel"
             android:layout_alignRight="@+id/bDining"
             android:layout_alignEnd="@+id/bDining" />
 
         <Button
             android:id="@+id/bRent"
             android:layout_height="wrap_content"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:text="Rent Exp"
             android:layout_below="@+id/bDeposits"
             android:layout_alignLeft="@+id/bDeposits"
@@ -93,11 +95,23 @@
         <Button
             android:id="@+id/bGroceries"
             android:layout_height="wrap_content"
-            android:layout_width="115dp"
+            android:layout_width="100dp"
             android:text="Groceries"
             android:layout_alignTop="@+id/bRent"
             android:layout_alignLeft="@+id/bFuel"
             android:layout_alignStart="@+id/bFuel" />
+        <Button
+            android:id="@+id/bMisc"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:text="Misc Exp"
+            android:layout_alignLeft="@+id/bDining"
+            android:layout_below="@+id/bRetirement"
+            android:layout_alignTop="@+id/bGroceries"
+            android:layout_alignRight="@+id/bDining"
+            android:layout_alignEnd="@+id/bDining" />
+
+
 
     </RelativeLayout>
 
