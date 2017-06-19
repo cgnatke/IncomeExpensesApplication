@@ -50,26 +50,26 @@
       <file leaf-file-name="PromptActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/PromptActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47204968">
-              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.049689442">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding>
-                <element signature="e#2637#2907#0" expanded="true" />
-                <element signature="e#2906#2907#0" expanded="true" />
-                <element signature="e#3022#3223#0" expanded="true" />
-                <element signature="e#3222#3223#0" expanded="true" />
-                <element signature="e#3329#3527#0" expanded="true" />
-                <element signature="e#3526#3527#0" expanded="true" />
-                <element signature="e#3639#3839#0" expanded="true" />
-                <element signature="e#3838#3839#0" expanded="true" />
-                <element signature="e#3939#4135#0" expanded="true" />
-                <element signature="e#4134#4135#0" expanded="true" />
-                <element signature="e#4235#4431#0" expanded="true" />
-                <element signature="e#4430#4431#0" expanded="true" />
-                <element signature="e#4531#4727#0" expanded="true" />
-                <element signature="e#4726#4727#0" expanded="true" />
-                <element signature="e#4842#5043#0" expanded="true" />
-                <element signature="e#5042#5043#0" expanded="true" />
-                <element signature="e#6143#6160#0" expanded="true" />
+                <element signature="e#3534#3551#0" expanded="true" />
+                <element signature="e#4854#5124#0" expanded="true" />
+                <element signature="e#5123#5124#0" expanded="true" />
+                <element signature="e#5239#5440#0" expanded="true" />
+                <element signature="e#5439#5440#0" expanded="true" />
+                <element signature="e#5546#5744#0" expanded="true" />
+                <element signature="e#5743#5744#0" expanded="true" />
+                <element signature="e#5856#6056#0" expanded="true" />
+                <element signature="e#6055#6056#0" expanded="true" />
+                <element signature="e#6156#6352#0" expanded="true" />
+                <element signature="e#6351#6352#0" expanded="true" />
+                <element signature="e#6452#6648#0" expanded="true" />
+                <element signature="e#6647#6648#0" expanded="true" />
+                <element signature="e#6748#6944#0" expanded="true" />
+                <element signature="e#6943#6944#0" expanded="true" />
+                <element signature="e#7059#7260#0" expanded="true" />
+                <element signature="e#7259#7260#0" expanded="true" />
                 <element signature="method#onCreateOptionsMenu#0;class#PromptActivity#0" expanded="false" />
                 <element signature="method#onOptionsItemSelected#0;class#PromptActivity#0" expanded="false" />
               </folding>
@@ -1528,8 +1528,8 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/BankTransaction.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/Expense.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/PromptActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/Expenses.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/PromptActivity.java" />
       </list>
     </option>
   </component>
@@ -1873,7 +1873,7 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39933258" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39933258" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1915,14 +1915,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/PromptActivity.java</url>
-          <line>187</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
@@ -1986,26 +1978,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cn/android/incomevsexpenses/PromptActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47204968">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.049689442">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <element signature="e#2637#2907#0" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#3022#3223#0" expanded="true" />
-            <element signature="e#3222#3223#0" expanded="true" />
-            <element signature="e#3329#3527#0" expanded="true" />
-            <element signature="e#3526#3527#0" expanded="true" />
-            <element signature="e#3639#3839#0" expanded="true" />
-            <element signature="e#3838#3839#0" expanded="true" />
-            <element signature="e#3939#4135#0" expanded="true" />
-            <element signature="e#4134#4135#0" expanded="true" />
-            <element signature="e#4235#4431#0" expanded="true" />
-            <element signature="e#4430#4431#0" expanded="true" />
-            <element signature="e#4531#4727#0" expanded="true" />
-            <element signature="e#4726#4727#0" expanded="true" />
-            <element signature="e#4842#5043#0" expanded="true" />
-            <element signature="e#5042#5043#0" expanded="true" />
-            <element signature="e#6143#6160#0" expanded="true" />
+            <element signature="e#3534#3551#0" expanded="true" />
+            <element signature="e#4854#5124#0" expanded="true" />
+            <element signature="e#5123#5124#0" expanded="true" />
+            <element signature="e#5239#5440#0" expanded="true" />
+            <element signature="e#5439#5440#0" expanded="true" />
+            <element signature="e#5546#5744#0" expanded="true" />
+            <element signature="e#5743#5744#0" expanded="true" />
+            <element signature="e#5856#6056#0" expanded="true" />
+            <element signature="e#6055#6056#0" expanded="true" />
+            <element signature="e#6156#6352#0" expanded="true" />
+            <element signature="e#6351#6352#0" expanded="true" />
+            <element signature="e#6452#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+            <element signature="e#6748#6944#0" expanded="true" />
+            <element signature="e#6943#6944#0" expanded="true" />
+            <element signature="e#7059#7260#0" expanded="true" />
+            <element signature="e#7259#7260#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#PromptActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#PromptActivity#0" expanded="false" />
           </folding>

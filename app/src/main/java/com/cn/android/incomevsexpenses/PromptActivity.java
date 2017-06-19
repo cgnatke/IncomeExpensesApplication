@@ -81,6 +81,67 @@ public class PromptActivity extends AppCompatActivity {
         Log.d("CN_STATE", Arrays.toString(transactions.toArray()));
 
         mTextView = (TextView) findViewById(R.id.textView);
+        initializeButtons();
+
+        goToNextTransaction();
+
+    }
+
+    private void goToNextTransaction() {
+        if (index == transactions.size()-1 ) {
+            mTextView.setText(expenses.toString()); //todo go to summary screen instead
+        } else {
+            BankTransaction t = transactions.get(index);
+            mTextView.setText("What type of transaction is this? \n " + t.toString());
+            amount = t.amount;
+            index++;
+        }
+    }
+
+    //private void myClickHandler(View target) //todo create a click listener for all buttons to share
+
+    public List<BankTransaction> readStatement() throws IOException {
+
+        if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            Log.v("CN_STATE","Permission is granted");
+            //File write logic here
+        } else {
+            Log.v("CN_STATE", "No permission!!!");
+        }
+
+        //List<BankTransaction> t = new ArrayList<BankTransaction>();
+        List<BankTransaction> t = new ArrayList<BankTransaction>();
+        File downloadsDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); //getExternalStorageDirectory();
+        File statement = new File(downloadsDirectory, "account_testing.csv");
+
+        BufferedReader br;
+        try {
+
+            br = new BufferedReader(new FileReader(statement));
+            String line;
+
+            //skip the first three lines of the file
+            br.readLine();
+            br.readLine();
+            br.readLine();
+
+            //todo add date to the bt class
+            while ((line = br.readLine()) != null) {
+                double amount = Double.parseDouble(line.split(",")[1].replace("\"", "")); //get rid of double quotes
+                String description = line.split(",")[2].replace("\"","");
+                String date = line.split(",")[0].replace("\"","");
+                BankTransaction bt = new BankTransaction(description, amount, date);
+                t.add(bt);
+            }
+        }
+        catch (IOException e) {
+            Log.e("CN_STATE", e.toString());
+        }
+
+        return t;
+    }
+
+    private void initializeButtons() {
 
         //todo: create a factory for the button inits
         mPaycheckButton = (Button) findViewById(R.id.bPaycheck);
@@ -156,65 +217,7 @@ public class PromptActivity extends AppCompatActivity {
             }
         });
 
-        //todo add button for retirement/investment contributions
-        goToNextTransaction();
-
     }
-
-    private void goToNextTransaction() {
-        if (index == transactions.size()-1 ) {
-            mTextView.setText(expenses.toString()); //todo go to summary screen instead
-        } else {
-            BankTransaction t = transactions.get(index);
-            mTextView.setText("What type of transaction is this? \n " + t.toString());
-            amount = t.amount;
-            index++;
-        }
-    }
-
-    //private void myClickHandler(View target) //todo create a click listener for all buttons to share
-
-    public List<BankTransaction> readStatement() throws IOException {
-
-        if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            Log.v("CN_STATE","Permission is granted");
-            //File write logic here
-        } else {
-            Log.v("CN_STATE", "No permission!!!");
-        }
-
-        //List<BankTransaction> t = new ArrayList<BankTransaction>();
-        List<BankTransaction> t = new ArrayList<BankTransaction>();
-        File downloadsDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); //getExternalStorageDirectory();
-        File statement = new File(downloadsDirectory, "account_testing.csv");
-
-        BufferedReader br;
-        try {
-
-            br = new BufferedReader(new FileReader(statement));
-            String line;
-
-            //skip the first three lines of the file
-            br.readLine();
-            br.readLine();
-            br.readLine();
-
-            //todo add date to the bt class
-            while ((line = br.readLine()) != null) {
-                double amount = Double.parseDouble(line.split(",")[1].replace("\"", "")); //get rid of double quotes
-                String description = line.split(",")[2].replace("\"","");
-                String date = line.split(",")[0].replace("\"","");
-                BankTransaction bt = new BankTransaction(description, amount, date);
-                t.add(bt);
-            }
-        }
-        catch (IOException e) {
-            Log.e("CN_STATE", e.toString());
-        }
-
-        return t;
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
