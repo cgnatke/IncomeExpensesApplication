@@ -2,7 +2,9 @@ package com.cn.android.incomevsexpenses;
 
 import android.Manifest;
 import android.app.VoiceInteractor;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
@@ -25,14 +27,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import org.w3c.dom.Text;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Currency;
+import java.util.Date;
 import java.util.List;
 
 
@@ -43,7 +49,9 @@ public class PromptActivity extends AppCompatActivity {
     private double amount = 0;
 
     //todo use a dialog to prompt for the filename
-    private static final String fileName = "./data/account_testing.csv"; //+ promptForFilename();
+    //private static final String fileName = "./data/account_testing.csv"; //+ promptForFilename();
+    Uri selectedfile;
+
 
     private List<BankTransaction> transactions;
     private int index = 0;
@@ -78,7 +86,7 @@ public class PromptActivity extends AppCompatActivity {
             Log.e("CN_STATE", e.getStackTrace().toString());
         }
 
-        Log.d("CN_STATE", Arrays.toString(transactions.toArray()));
+     //   Log.d("CN_STATE", Arrays.toString(transactions.toArray()));
 
         mTextView = (TextView) findViewById(R.id.textView);
         initializeButtons();
@@ -100,7 +108,7 @@ public class PromptActivity extends AppCompatActivity {
 
     //private void myClickHandler(View target) //todo create a click listener for all buttons to share
 
-    public List<BankTransaction> readStatement() throws IOException {
+    public List<BankTransaction> readStatement() throws IOException, java.text.ParseException {
 
         if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             Log.v("CN_STATE","Permission is granted");
@@ -111,7 +119,13 @@ public class PromptActivity extends AppCompatActivity {
 
         //List<BankTransaction> t = new ArrayList<BankTransaction>();
         List<BankTransaction> t = new ArrayList<BankTransaction>();
+
+        Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT);
+
+        startActivityForResult(Intent.createChooser(intent, "Select a file"), 123);
+
         File downloadsDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); //getExternalStorageDirectory();
+        System.out.println(selectedfile.toString());
         File statement = new File(downloadsDirectory, "account_testing.csv");
 
         BufferedReader br;
@@ -125,11 +139,12 @@ public class PromptActivity extends AppCompatActivity {
             br.readLine();
             br.readLine();
 
-            //todo add date to the bt class
+            //todo add a try catch around each line read in or decide to throw out all input
             while ((line = br.readLine()) != null) {
                 double amount = Double.parseDouble(line.split(",")[1].replace("\"", "")); //get rid of double quotes
                 String description = line.split(",")[2].replace("\"","");
-                String date = line.split(",")[0].replace("\"","");
+                //String date = line.split(",")[0].replace("\"","");
+                Date date = new SimpleDateFormat("dd/MM/yyyy").parse(line.split(",")[0].replace("\"",""));
                 BankTransaction bt = new BankTransaction(description, amount, date);
                 t.add(bt);
             }
@@ -228,6 +243,14 @@ public class PromptActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==123 && resultCode==RESULT_OK) {
+            selectedfile = data.getData(); //The uri with the location of the file
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_prompt, menu);
@@ -248,4 +271,5 @@ public class PromptActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

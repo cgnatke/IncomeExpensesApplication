@@ -10,9 +10,9 @@ public class BankTransaction {
     //members
     double amount;
     String description;
-    String date; //todo change type to an actual date
+    Date date;
 
-    public BankTransaction(String description, double amount, String date) {
+    public BankTransaction(String description, double amount, Date date) {
         this.description = description;
         this.amount = amount;
         this.date = date;
