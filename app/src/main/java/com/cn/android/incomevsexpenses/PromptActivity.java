@@ -98,6 +98,7 @@ public class PromptActivity extends AppCompatActivity {
     private void goToNextTransaction() {
         if (index == transactions.size()-1 ) {
             //todo ensure buttons are disabled
+            amount = 0; // this is temporary. the purpose is to prevent users from adding amount to a category after the input is processed
             mTextView.setText(expenses.toString()); //todo go to summary screen instead
         } else {
             BankTransaction t = transactions.get(index);
