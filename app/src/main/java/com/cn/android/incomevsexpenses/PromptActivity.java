@@ -97,6 +97,7 @@ public class PromptActivity extends AppCompatActivity {
 
     private void goToNextTransaction() {
         if (index == transactions.size()-1 ) {
+            //todo ensure buttons are disabled
             mTextView.setText(expenses.toString()); //todo go to summary screen instead
         } else {
             BankTransaction t = transactions.get(index);
@@ -110,18 +111,13 @@ public class PromptActivity extends AppCompatActivity {
 
     public List<BankTransaction> readStatement() throws IOException, java.text.ParseException {
 
-        if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            Log.v("CN_STATE","Permission is granted");
-            //File write logic here
-        } else {
-            Log.v("CN_STATE", "No permission!!!");
-        }
-
-        //List<BankTransaction> t = new ArrayList<BankTransaction>();
         List<BankTransaction> t = new ArrayList<BankTransaction>();
 
-        //Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT);
+        if (!checkForReadPermissions()) {
+            return t; //todo alert the user... Error out gracefully
+        }
 
+        //Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT);
         //startActivityForResult(Intent.createChooser(intent, "Select a file"), 123);
         //System.out.println(selectedfile.toString());
 
@@ -155,6 +151,16 @@ public class PromptActivity extends AppCompatActivity {
         }
 
         return t;
+    }
+
+    private boolean checkForReadPermissions() {
+        if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            Log.v("CN_STATE", "Permission is granted");
+            return true;
+        } else {
+            Log.v("CN_STATE", "No permission!!!");
+            return false;
+        }
     }
 
     private void initializeButtons() {
