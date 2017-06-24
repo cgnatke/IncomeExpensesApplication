@@ -18,6 +18,7 @@ public class BankTransaction {
         this.date = date;
     }
 
+    //TODO: change the date format- Do not include the time
     public String toString() {
 
         return "Date: " + this.date + "\n"

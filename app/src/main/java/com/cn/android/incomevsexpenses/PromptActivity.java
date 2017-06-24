@@ -120,12 +120,13 @@ public class PromptActivity extends AppCompatActivity {
         //List<BankTransaction> t = new ArrayList<BankTransaction>();
         List<BankTransaction> t = new ArrayList<BankTransaction>();
 
-        Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT);
+        //Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT);
 
-        startActivityForResult(Intent.createChooser(intent, "Select a file"), 123);
+        //startActivityForResult(Intent.createChooser(intent, "Select a file"), 123);
+        //System.out.println(selectedfile.toString());
 
         File downloadsDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS); //getExternalStorageDirectory();
-        System.out.println(selectedfile.toString());
+
         File statement = new File(downloadsDirectory, "account_testing.csv");
 
         BufferedReader br;
