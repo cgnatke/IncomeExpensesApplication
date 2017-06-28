@@ -1,0 +1,13 @@
+#Tue Jun 27 22:10:37 EDT 2017
+renamed.3=classes.dex
+renamed.2=classes2.dex
+renamed.1=classes4.dex
+renamed.0=classes3.dex
+base.3=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_524e1e4f26165faf757fee733d2e1d20d7ddc417
+base.2=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4a55bd0cfe6ec145dcf40e2f5adaa9771c8a1881
+base.1=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_9b534991b1c7dd2165ffbda8becd91ff20b6430d
+base.0=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4a60cccbd4e5773ea2923a2e45a4e24e7153adea
+file.3=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_524e1e4f26165faf757fee733d2e1d20d7ddc417/classes.dex
+file.2=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4a55bd0cfe6ec145dcf40e2f5adaa9771c8a1881/classes.dex
+file.1=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_9b534991b1c7dd2165ffbda8becd91ff20b6430d/classes.dex
+file.0=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4a60cccbd4e5773ea2923a2e45a4e24e7153adea/classes.dex

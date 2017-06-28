@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/chris/.android/build-cache/40eb801b7677a44715763021833beaea354356fe/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/chris/.android/build-cache/40eb801b7677a44715763021833beaea354356fe/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]

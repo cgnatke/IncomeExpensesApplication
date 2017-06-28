@@ -1,0 +1,7 @@
+#Tue Jun 27 22:10:37 EDT 2017
+base.0=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_97956935248f36c891ee78a594b7826885e481ea
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a905740e046fee0cb0964e2a036dd839f9414611/classes.dex
+base.1=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a905740e046fee0cb0964e2a036dd839f9414611
+file.0=/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_97956935248f36c891ee78a594b7826885e481ea/classes.dex

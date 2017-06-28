@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/res/merged/debug/menu/menu_summary.xml",
+        "source": "/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/src/main/res/menu/menu_summary.xml"
+    },
+    {
+        "merged": "/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/res/merged/debug/menu/menu_prompt.xml",
+        "source": "/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/src/main/res/menu/menu_prompt.xml"
+    }
+]

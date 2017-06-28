@@ -2,32 +2,94 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\chris\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-95e51d7e227ed91ac2d769f616d2ca7ffc665470.jar" />
-    </item>
-    <item
-        jar="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\classes-505b11836fb5bf8c95c53ce7c819552f3ac02219.jar" />
-    </item>
-    <item
-        jar="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\classes-07c4081a4238ef0fbcd2f6fed6cddc9b84adfc7d.jar" />
-    </item>
-    <item
-        jar="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
+        is-multidex="true"
+        jar="/home/chris/.android/build-cache/a3415da8e64228ded4c7d6e5840bc87156acf719/output/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
         sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\chris\AndroidStudioProjects\IncomeExpensesApplication\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-8814db63e566461999350a3c8faae1387d3b267c.jar" />
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_9b534991b1c7dd2165ffbda8becd91ff20b6430d/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/chris/.android/build-cache/a3415da8e64228ded4c7d6e5840bc87156acf719/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/pre-dexed/debug/classes_4a60cccbd4e5773ea2923a2e45a4e24e7153adea.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b5e5f1b64c3886aa57380426ec9a8a5e66492d41">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a905740e046fee0cb0964e2a036dd839f9414611/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/chris/.android/build-cache/a3415da8e64228ded4c7d6e5840bc87156acf719/output/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_9b534991b1c7dd2165ffbda8becd91ff20b6430d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/chris/.android/build-cache/40eb801b7677a44715763021833beaea354356fe/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/pre-dexed/debug/classes_4a55bd0cfe6ec145dcf40e2f5adaa9771c8a1881.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_97956935248f36c891ee78a594b7826885e481ea/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/chris/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0_524e1e4f26165faf757fee733d2e1d20d7ddc417.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/chris/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_524e1e4f26165faf757fee733d2e1d20d7ddc417/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/chris/.android/build-cache/40eb801b7677a44715763021833beaea354356fe/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4a55bd0cfe6ec145dcf40e2f5adaa9771c8a1881/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/chris/.android/build-cache/a3415da8e64228ded4c7d6e5840bc87156acf719/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/home/chris/workspace/IncomeVsExpensesApplication/IncomeExpensesApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4a60cccbd4e5773ea2923a2e45a4e24e7153adea/classes.dex" />
     </item>
 
 </items>
